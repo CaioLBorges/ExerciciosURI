@@ -7,12 +7,15 @@ namespace _014
     {
         static void Main(string[] args)
         {
-            int km;
-            double gasolina;
+            int X;
+            double Y, media;
 
-            km = int.Parse(Console.ReadLine());
-            gasolina = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            X = int.Parse(Console.ReadLine());
+            Y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
+            media = X / Y;
+
+            Console.WriteLine(media.ToString("F3") + " km/l", CultureInfo.InvariantCulture );
         }
     }
 }
