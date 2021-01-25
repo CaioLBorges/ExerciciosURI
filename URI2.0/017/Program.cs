@@ -20,7 +20,7 @@ namespace _017
             preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             distancia = tempo * vMedia;
-            consumo = distancia / 18.0;
+            consumo = distancia / cMedio;
             gasto = consumo * preco;
 
             Console.WriteLine("=== GASTOS ===");
