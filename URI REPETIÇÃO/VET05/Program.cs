@@ -1,33 +1,30 @@
 ﻿using System;
 using System.Globalization;
-namespace VET04
+namespace VET05
 {
     class Program
     {
         static void Main(string[] args)
         {
             int N = int.Parse(Console.ReadLine());
-            double[] notas = new double[N];
+            int[] numeros = new int[N];
+            double media = 0.0, contador = 0.0;
 
             string[] vet = Console.ReadLine().Split(' ');
-
-            double media = 0.0;
             for(int i = 0; i < N; i++)
             {
-                notas[i] = double.Parse(vet[i], CultureInfo.InvariantCulture);
-                media += notas[i];
+                numeros[i] = int.Parse(vet[i]);
             }
-            media /= N;
-            Console.WriteLine(media.ToString("F3"), CultureInfo.InvariantCulture);
-
             for(int i = 0; i < N; i++)
             {
-                if(notas[i] < media)
+                if(numeros[i] % 2 == 0)
                 {
-                    Console.WriteLine(notas[i]);
+                    media += numeros[i];
+                    contador++;
                 }
             }
-
+            media /= contador;
+            Console.WriteLine(media.ToString("F1"), CultureInfo.InvariantCulture);
         }
     }
 }
