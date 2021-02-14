@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MAT03
+namespace MAT04
 {
     class Program
     {
@@ -8,6 +8,7 @@ namespace MAT03
         {
             int N = int.Parse(Console.ReadLine());
             int[,] matriz = new int[N, N];
+            int soma = 0, somador = 0;
 
             for (int i = 0; i < N; i++)
             {
@@ -19,16 +20,16 @@ namespace MAT03
             }
             for (int i = 0; i < N; i++)
             {
-                int contador = 0;
                 for (int j = 0; j < N; j++)
                 {
-                    if (matriz[i, j] > contador)
+                    if (j > somador)
                     {
-                        contador = matriz[i, j];
+                        soma += matriz[i, j];
                     }
                 }
-                Console.WriteLine(contador);
+                somador++;
             }
+            Console.WriteLine(soma);
         }
     }
 }
